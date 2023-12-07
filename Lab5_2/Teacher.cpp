@@ -112,8 +112,8 @@ void Tax::init(int size) {
 void Tax::countTax(double* sallary) {
 	for (int i = 0; i < sizeOfStruct; i++)
 	{
-		taxes[i].esv = sallary[i] * 0, 061;
-		 taxes[i].pdfo = (sallary[i]-taxes[i].esv)*0,15;
+		taxes[i].esv = sallary[i] * 0.061;
+		 taxes[i].pdfo = (sallary[i]-taxes[i].esv)*0.15;
 		 taxes[i].moneyTaken = taxes[i].esv+ taxes[i].pdfo;
 		 taxes[i].newSallary = sallary[i]- taxes[i].moneyTaken;
 	}
@@ -121,10 +121,10 @@ void Tax::countTax(double* sallary) {
 void Tax::printTax() const
 {
 	for (int i = 0; i < sizeOfStruct; i++) {
-		cout << ' ' << "ЄСВ -->" << ' ' << taxes[i].esv << ' ' << '\n' << ' ' <<
-			"ПДФО -->" << ' ' << taxes[i].pdfo << ' ' << '\n' << ' ' <<
-			"Величина утриманих грошей -->" << ' ' << taxes[i].moneyTaken << ' ' << '\n' << ' ' <<
-			"Величина зарплати до видачі -->" << ' ' << taxes[i].newSallary << '\n' << ' ' << '\n';
+		cout << ' ' << "ЄСВ [" << i + 1 << "]-->" << ' ' << taxes[i].esv << ' ' << '\n' << ' ' <<
+			"ПДФО [" << i + 1 << "]-->" << ' ' << taxes[i].pdfo << ' ' << '\n' << ' ' <<
+			"Величина утриманих грошей [" << i + 1 << "]-->" << ' ' << taxes[i].moneyTaken << ' ' << '\n' << ' ' <<
+			"Величина зарплати до видачі [" << i + 1 << "]-->" << ' ' << taxes[i].newSallary << '\n' << ' ' << '\n';
 	}
 	cout << '\n';
 }
